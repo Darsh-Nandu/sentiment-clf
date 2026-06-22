@@ -1,0 +1,30 @@
+# configs/base.yaml
+
+project:
+  name: sentiment-clf
+  experiment_name: baseline
+
+data:
+  dataset_name: sst2
+  max_length: 128
+  train_split: train
+  val_split: validation
+  test_size: 0.1
+  random_seed: 42
+
+model:
+  name: distilbert-base-uncased
+  num_labels: 2
+  dropout: 0.1
+
+training:
+  batch_size: 32
+  num_epochs: 3
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  gradient_accumulation_steps: 1
+
+mlflow:
+  tracking_uri: mlruns
+  run_name: exp_01
