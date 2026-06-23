@@ -30,7 +30,7 @@ class SSTDataset(Dataset):
         )
 
         return {
-            "inputs_ids": encoding["input_ids"].squeeze(0),
+            "input_ids": encoding["input_ids"].squeeze(0),
             "attention_mask": encoding["attention_mask"].squeeze(0),
             "label": torch.tensor(label, dtype=torch.long)
         }
